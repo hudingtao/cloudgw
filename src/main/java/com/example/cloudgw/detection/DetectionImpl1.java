@@ -16,6 +16,7 @@ import java.net.URI;
  * @date: Created in 2019/5/28 20:49
  */
 public class DetectionImpl1 implements Detection {
+
     @Override
     public void detect(final ServerWebExchange exchange) {
         ServerHttpRequest request = exchange.getRequest();

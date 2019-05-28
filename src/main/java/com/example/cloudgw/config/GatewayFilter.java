@@ -28,7 +28,8 @@ public class GatewayFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        detectionFilters.parallelStream().forEach(filter -> filter.handle(exchange));
+        detectionFilters.parallelStream()
+                .forEach(filter -> filter.handle(exchange));
         return chain.filter(exchange);
     }
 

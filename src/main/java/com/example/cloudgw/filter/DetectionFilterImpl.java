@@ -24,7 +24,7 @@ public class DetectionFilterImpl implements DetectionFilter{
 
     @Override
     public void handle(final ServerWebExchange exchange) {
-
-        detections.parallelStream().forEach(filter -> filter.detect(exchange));
+        detections.parallelStream()
+                .forEach(filter -> filter.detect(exchange));
     }
 }
